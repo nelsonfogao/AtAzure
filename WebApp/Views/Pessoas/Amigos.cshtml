@@ -28,10 +28,10 @@
     <td>
         @if (Model.Amigos.Any(x => x.Id == item.Id))
         {
-<input type="checkbox" name="AmigoIds[]" value="@item.Id" checked /> }
+<input type="checkbox" name="Ids[]" value="@item.Id" checked /> }
                 else
                 {
-<input type="checkbox" name="AmigoIds[]" value="@item.Id" />}
+<input type="checkbox" name="Ids[]" value="@item.Id" />}
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Id)

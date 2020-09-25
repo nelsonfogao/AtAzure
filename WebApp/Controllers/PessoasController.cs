@@ -170,7 +170,7 @@ namespace WebApp.Controllers
         [HttpPost]
         public async Task<ActionResult> Amigos([FromForm] CadastrarAmigoViewModel viewModel)
         {
-            await _pessoaApi.PostAmigos(viewModel.PessoaId, viewModel.AmigosIds);
+            await _pessoaApi.PostAmigos(viewModel.PessoaId, viewModel.Ids);
 
             return RedirectToAction(nameof(Amigos), new {id= viewModel.PessoaId});
         }

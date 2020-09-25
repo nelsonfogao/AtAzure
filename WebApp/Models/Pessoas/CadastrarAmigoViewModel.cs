@@ -8,6 +8,6 @@ namespace WebApp.Models.Pessoas
     public class CadastrarAmigoViewModel
     {
         public int PessoaId { get; set; }
-        public int[] AmigosIds { get; set; }
+        public int[] Ids { get; set; }
     }
 }
