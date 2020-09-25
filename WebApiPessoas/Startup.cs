@@ -1,20 +1,20 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
-using WebApiPessoa.Context;
-using AutoMapper;
+using WebApiPessoas.Context;
 
-namespace WebApiPessoa
+namespace WebApiPessoas
 {
     public class Startup
     {
@@ -29,9 +29,8 @@ namespace WebApiPessoa
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
             services.AddDbContext<WebApiPessoaContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("AtAzure")));
+                options.UseSqlServer(Configuration.GetConnectionString("AtAzure")));
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }

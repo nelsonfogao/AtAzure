@@ -15,12 +15,14 @@ namespace WebApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IPaisApi PaisApi;
         private readonly IEstadoApi EstadoApi;
+        private readonly IPessoaApi PessoaApi;
 
-        public HomeController(ILogger<HomeController> logger, IEstadoApi estadoApi, IPaisApi paisApi)
+        public HomeController(ILogger<HomeController> logger, IEstadoApi estadoApi, IPaisApi paisApi, IPessoaApi pessoaApi)
         {
             _logger = logger;
             this.EstadoApi = estadoApi;
             this.PaisApi = paisApi;
+            this.PessoaApi = pessoaApi;
         }
 
         public async Task<IActionResult> Index()
@@ -32,6 +34,9 @@ namespace WebApp.Controllers
 
             var estados = await EstadoApi.GetEstados();
             paginaInicial.QuantidadeDeEstados = estados.Count;
+
+            var pessoas = await PessoaApi.GetPessoas();
+            paginaInicial.QuantidadeDePessoas = pessoas.Count;
 
             return View(paginaInicial);
         }

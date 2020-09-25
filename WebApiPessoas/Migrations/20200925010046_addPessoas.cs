@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApiPessoa.Migrations
+namespace WebApiPessoas.Migrations
 {
     public partial class addPessoas : Migration
     {

@@ -1,0 +1,52 @@
+﻿@model WebApp.Models.Pessoas.ListarAmigosViewModel
+
+@{ ViewData["Title"] = "Amigos"; }
+
+<h1>Amigos</h1>
+
+<form action="/pessoas/amigos" method="post">
+    <input type="hidden" name="pessoaId" value="@Model.Pessoa.Id" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Amigo?
+                </th>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Pessoas)
+            {
+<tr>
+    <td>
+        @if (Model.Amigos.Any(x => x.Id == item.Id))
+        {
+<input type="checkbox" name="AmigoIds[]" value="@item.Id" checked /> }
+                else
+                {
+<input type="checkbox" name="AmigoIds[]" value="@item.Id" />}
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id })
+    </td>
+</tr>            }
+        </tbody>
+    </table>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

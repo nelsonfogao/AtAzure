@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models.Paises;
 
-namespace WebApp.Models
+namespace WebApp.Models.Pessoas
 {
     public class PessoaViewModel
     {

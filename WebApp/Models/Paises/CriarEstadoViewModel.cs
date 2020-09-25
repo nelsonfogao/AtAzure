@@ -13,8 +13,6 @@ namespace WebApp.Models.Paises
         [Required(ErrorMessage = "Campo Nome é obrigatório")]
 
         public String Nome { get; set; }
-        [Required(ErrorMessage = "Campo Foto é obrigatório")]
-
         public IFormFile ImgFoto { get; set; }
         public String Foto { get; set; }
 

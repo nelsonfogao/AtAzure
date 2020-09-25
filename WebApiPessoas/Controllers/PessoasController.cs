@@ -6,10 +6,10 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApiPessoa.Context;
-using WebApiPessoa.Models;
+using WebApiPessoas.Context;
+using WebApiPessoas.Models;
 
-namespace WebApiPessoa.Controllers
+namespace WebApiPessoas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -143,4 +143,21 @@ namespace WebApiPessoa.Controllers
             return _context.Pessoa.Any(e => e.Id == id);
         }
     }
+    public class PessoaResponse
+    {
+        public int Id { get; set; }
+        public String Nome { get; set; }
+        public String Sobrenome { get; set; }
+        public String Email { get; set; }
+        public String Telefone { get; set; }
+
+        public DateTime DataDeNascimento { get; set; }
+
+        public String Foto { get; set; }
+    }
+    public class PostAmigosRequest
+    {
+        public int[] Ids { get; set; }
+    }
 }
+

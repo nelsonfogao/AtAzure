@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApiPessoa.Models;
+using WebApiPessoas.Controllers;
+using WebApiPessoas.Models;
 
-namespace WebApiPessoa.Mapper
+namespace WebApiPessoas.Mapper
 {
     public class PessoaMap : Profile
     {

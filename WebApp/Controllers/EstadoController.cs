@@ -22,8 +22,8 @@ namespace WebApp.Controllers
 
         public EstadoController(IEstadoApi estadoApi, IPaisApi paisApi,WebApiPaisesContext context)
         {
-            this._estadoApi = estadoApi;
-            this._paisApi = paisApi;
+            _estadoApi = estadoApi;
+            _paisApi = paisApi;
             _context = context;
         }
 

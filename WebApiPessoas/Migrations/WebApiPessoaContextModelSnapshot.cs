@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApiPessoa.Context;
+using WebApiPessoas.Context;
 
-namespace WebApiPessoa.Migrations
+namespace WebApiPessoas.Migrations
 {
     [DbContext(typeof(WebApiPessoaContext))]
     partial class WebApiPessoaContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace WebApiPessoa.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiPessoa.Models.Pessoa", b =>
+            modelBuilder.Entity("WebApiPessoas.Models.Pessoa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,9 +60,9 @@ namespace WebApiPessoa.Migrations
                     b.ToTable("Pessoa");
                 });
 
-            modelBuilder.Entity("WebApiPessoa.Models.Pessoa", b =>
+            modelBuilder.Entity("WebApiPessoas.Models.Pessoa", b =>
                 {
-                    b.HasOne("WebApiPessoa.Models.Pessoa", null)
+                    b.HasOne("WebApiPessoas.Models.Pessoa", null)
                         .WithMany("Amigos")
                         .HasForeignKey("PessoaId");
                 });

@@ -7,7 +7,7 @@ namespace WebApp.ApiServices
 {
     public interface IPessoaApi
     {
-        Task PostPessoa(CriarPessoaViewModel form);
+        Task<CriarPessoaViewModel>PostPessoaAsync(CriarPessoaViewModel pessoaViewModel);
         Task PostAmigos(int pessoaId, int[] ids);
         Task<List<PessoaViewModel>> GetPessoas();
         Task<PessoaViewModel> GetPessoa(int id);

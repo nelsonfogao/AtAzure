@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApiPaises.Context;
+using WebApiPessoas.Context;
 using WebApp.ApiServices;
 
 namespace WebApp
@@ -26,11 +27,15 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
             services.AddScoped<IEstadoApi, EstadoApi>();
             services.AddScoped<IPaisApi, PaisApi>();
+            services.AddScoped<IPessoaApi, PessoaApi>();
+
             services.AddDbContext<WebApiPaisesContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("AtAzure")));
+            services.AddDbContext<WebApiPessoaContext>(options =>
+options.UseSqlServer(Configuration.GetConnectionString("AtAzure")));
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
