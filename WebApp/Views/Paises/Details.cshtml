@@ -1,0 +1,36 @@
+﻿@model WebApp.Models.Paises.PaisViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Paises</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Foto" style="max-width:350px; height:auto" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt class="col-sm-2">
+            Estados:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estados.Count)
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
