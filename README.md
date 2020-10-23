@@ -1,11 +1,13 @@
-# AtAzure
+# Trabalho Final(At) - Desenvolvimento com Serviços WCF e Microsoft Azure
 
 Nesse Assessment, você deve criar com o Visual Studio, três projetos do tipo ASP.NET Web Application (.NET Framework).<br />
 
 Duas dessas aplicações devem ser APIs web. Uma fornece operações de criação, leitura, atualização e deleção de amigos e também fornece operações de criação, leitura, 
 atualização e deleção de relacionamento entre amigos. Outra fornece operações de criação, leitura, 
-atualização e deleção de países e estados. Cada país deve possuir a foto da sua bandeira, um nome e sua lista de estados. 
-Cada estado deve possuir a foto da sua bandeira e um nome. Cada amigo deve possuir uma foto, nome, sobrenome, e-mail, telefone, data de aniversário, 
+atualização e deleção de países e estados. 
+Cada país deve possuir a foto da sua bandeira, um nome e sua lista de estados.<br /> 
+Cada estado deve possuir a foto da sua bandeira e um nome. <br />
+Cada amigo deve possuir uma foto, nome, sobrenome, e-mail, telefone, data de aniversário, 
 sua lista de amigos, país de origem e estado de origem.<br />
 
 A terceira aplicação deve ser do tipo MVC e deve conter as seguintes páginas:<br />
